@@ -1,2 +1,0 @@
-# silaw
-reciper computer
