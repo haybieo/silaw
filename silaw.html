@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILAW - Filipino Canopy Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <header>
+        <div class="logo">S I L A W</div>
+        <p class="subtitle">Filipino Kitchen & Serving Calculator</p>
+    </header>
+
+    <main class="container">
+        <section class="filter-section">
+            <input type="text" id="searchBar" placeholder="Search a Filipino dish..." oninput="filterDishes()">
+        </section>
+
+        <div id="recipeGrid" class="recipe-grid">
+            <!-- Dynamically populated by script.js -->
+        </div>
+    </main>
+
+    <!-- Recipe Details / Serving Calculator Modal -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImg" src="" alt="Dish Image" class="modal-img">
+            <p id="modalDesc" class="modal-desc"></p>
+            
+            <div class="calculator-box">
+                <label for="servingInput"><strong>Adjust Servings:</strong></label>
+                <input type="number" id="servingInput" min="1" max="50" value="4" onchange="updateServings()" oninput="updateServings()">
+            </div>
+
+            <div class="recipe-details-grid">
+                <div class="ingredients-col">
+                    <h3>Ingredients</h3>
+                    <ul id="modalIngredients"></ul>
+                </div>
+                <div class="instructions-col">
+                    <h3>Instructions</h3>
+                    <ol id="modalInstructions"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SILAW Recipes.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
